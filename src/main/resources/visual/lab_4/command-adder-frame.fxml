@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="100.0" maxWidth="540.0" minHeight="100.0" minWidth="540.0" prefHeight="100.0" prefWidth="540.0" style="-fx-border-color: green;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="visual.lab_4.CommandAdderController">
+   <children>
+      <ComboBox fx:id="CommandTypeBox" layoutX="15.0" layoutY="50.0" prefHeight="25.0" prefWidth="100.0" />
+      <Label layoutX="15.0" layoutY="20.0" prefHeight="25.0" prefWidth="70.0" style="-fx-border-color: black;" text="Комманда :" />
+      <TextField fx:id="instructionArgs" layoutX="130.0" layoutY="50.0" />
+      <Label layoutX="130.0" layoutY="20.0" prefHeight="25.0" prefWidth="70.0" style="-fx-border-color: black;" text="Аргументы :" />
+      <Button fx:id="resetProgramm" layoutX="430.0" layoutY="20.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Сбросить всё" />
+      <Button fx:id="executeAll" layoutX="430.0" layoutY="50.0" mnemonicParsing="false" text="Выполнить всё" />
+      <Button fx:id="addInstructionInProggramm" layoutX="285.0" layoutY="50.0" mnemonicParsing="false" text="Добавить инструкцию" textFill="#00ff11" />
+      <Button fx:id="executeInstruction" layoutX="278.0" layoutY="20.0" mnemonicParsing="false" text="Выполнить инструкцию" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="150.0" maxWidth="150.0" prefHeight="150.0" prefWidth="150.0" style="-fx-border-color: green;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="visual.lab_4.RegistersController">
+   <children>
+      <Label layoutX="15.0" layoutY="15.0" prefHeight="20.0" prefWidth="20.0" text="A :" />
+      <Label layoutX="15.0" layoutY="50.0" prefHeight="15.0" prefWidth="15.0" text="B :" />
+      <Label layoutX="15.0" layoutY="85.0" prefHeight="20.0" prefWidth="20.0" text="C :" />
+      <Label layoutX="15.0" layoutY="120.0" prefHeight="20.0" prefWidth="20.0" text="D :" />
+      <Label fx:id="registerA" layoutX="75.0" layoutY="17.0" text="0" />
+      <Label fx:id="registerB" layoutX="75.0" layoutY="50.0" text="0" />
+      <Label fx:id="registerC" layoutX="75.0" layoutY="87.0" text="0" />
+      <Label fx:id="registerD" layoutX="75.0" layoutY="122.0" text="0" />
+   </children>
+</AnchorPane>

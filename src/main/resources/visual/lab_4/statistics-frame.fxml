@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="150.0" maxWidth="380.0" minHeight="150.0" minWidth="380.0" prefHeight="150.0" prefWidth="380.0" style="-fx-border-color: green;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="visual.lab_4.StatisticsController">
+   <children>
+      <Label layoutX="15.0" layoutY="20.0" prefHeight="20.0" prefWidth="130.0" text="Самая частая команда :" />
+      <Label layoutX="15.0" layoutY="50.0" prefHeight="20.0" prefWidth="110.0" text=" Диапозон памяти :" />
+      <Label layoutX="15.0" layoutY="80.0" prefHeight="20.0" prefWidth="150.0" text="Порядок частоты команд :" />
+      <Label fx:id="mostFrequentCommand" layoutX="190.0" layoutY="20.0" />
+      <Label fx:id="memoryRange" layoutX="190.0" layoutY="50.0" />
+      <Label fx:id="orderOfCommandFreaquency" layoutX="190.0" layoutY="80.0" />
+   </children>
+</AnchorPane>
