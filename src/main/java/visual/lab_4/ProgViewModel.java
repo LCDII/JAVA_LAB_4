@@ -1,11 +1,11 @@
 package visual.lab_4;
 
-import visual.lab_4.CpuLib.Executor;
-import visual.lab_4.CpuLib.FCpu;
-import visual.lab_4.CpuLib.ICpu;
-import visual.lab_4.CpuLib.Prog;
+import visual.lab_4.CpuLib.*;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class ProgViewModel {
 
@@ -36,12 +36,41 @@ public class ProgViewModel {
         observers.add(observer);
     }
 
+    private void notifyObservers() {
+        for (IObserver o : observers) {
+            o.event();
+        }
+    }
+
 
 
 
     public String getRegister(String register)
     {
         return String.valueOf(cpu.getRegister(register));
+    }
+
+    public List<Integer> getAllMemory()
+    {
+        return Arrays.stream(cpu.getAllMemory())
+                // превращаем в IntStream
+                .boxed()
+                // упаковываем примитивы в Integer
+                .collect(Collectors.toList());
+    }
+
+    public int getMemoryRange()
+    {
+        return programm.MemoryRange();
+    }
+    public CommandType getMostFreaquentCommand()
+    {
+        return programm.mostFreaquentCommand();
+    }
+
+    public List<CommandType> getCommandsByFreaquency()
+    {
+        return programm.commandsByFreaquency();
     }
 }
 

@@ -6,7 +6,7 @@
 
 <AnchorPane maxHeight="50.0" maxWidth="540.0" minHeight="50.0" minWidth="540.0" prefHeight="50.0" prefWidth="540.0" style="-fx-border-color: green;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="visual.lab_4.CommandController">
    <children>
-      <Label fx:id="commandTypeText" layoutX="40.0" layoutY="12.5" prefHeight="25.0" prefWidth="60.0" text="Command" />
+      <Label  fx:id="commandTypeT" layoutX="40.0" layoutY="12.5" prefHeight="25.0" prefWidth="60.0" text="Command" />
       <Button alignment="CENTER" layoutX="500.0" layoutY="12.5" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="x" textFill="RED">
          <font>
             <Font size="10.0" />
@@ -14,5 +14,6 @@
       </Button>
       <Button layoutX="470.0" layoutY="12.5" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="&gt;" />
       <Button layoutX="440.0" layoutY="12.5" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="&lt;" />
+      <Label fx:id="arguments" layoutX="150.0" layoutY="12.5" prefHeight="25.0" prefWidth="265.0" text="Args" />
    </children>
 </AnchorPane>

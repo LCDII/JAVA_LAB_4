@@ -25,6 +25,10 @@ class Cpu implements ICpu{
         return number;
     }
 
+    public int[] getAllMemory()
+    {
+        return mem;
+    }
     public void setRegister(String string, int number) throws CpuException {
         switch (string) {
             case "a" -> a = number;

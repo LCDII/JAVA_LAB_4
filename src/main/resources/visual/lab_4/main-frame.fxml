@@ -12,7 +12,7 @@
          </content>
       </ScrollPane>
       <AnchorPane fx:id="commandAdderPlaceHolder" layoutX="14.0" layoutY="610.0" prefHeight="100.0" prefWidth="540.0" style="-fx-border-color: black;" />
-      <ScrollPane fx:id="memoryPlaceHolder" layoutX="564.0" layoutY="180.0" prefHeight="410.0" prefWidth="330.0" style="-fx-border-color: black;" />
       <AnchorPane fx:id="statisticsPlaceHolder" layoutX="173.0" layoutY="14.0" prefHeight="150.0" prefWidth="380.0" style="-fx-border-color: black;" />
+      <AnchorPane fx:id="memoryPlaceHolder" layoutX="563.0" layoutY="180.0" prefHeight="410.0" prefWidth="330.0" style="-fx-border-color: black;" />
    </children>
 </AnchorPane>
