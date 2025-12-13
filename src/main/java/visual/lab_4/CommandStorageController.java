@@ -6,7 +6,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import visual.lab_4.CpuLib.Command;
 
-import javax.lang.model.AnnotatedConstruct;
+
 import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
@@ -30,7 +30,7 @@ public class CommandStorageController implements IObserver{
         commandsBox.getChildren().clear();
         List<Command> commands = progViewModel.getProgramList();
 
-        for(Command c: commands)
+        for(int i = 0; i < commands.size(); i++)
         {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("command-frame.fxml"));
             CommandController commandController = new CommandController();
@@ -38,7 +38,7 @@ public class CommandStorageController implements IObserver{
             try
             {
                 AnchorPane pane = loader.load();
-                commandController.setCommand(c);
+                commandController.setCommand(commands.get(i), i);
                 commandsBox.getChildren().add(pane);
             }
             catch (IOException e)

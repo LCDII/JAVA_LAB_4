@@ -37,5 +37,9 @@ public class Executor {
         catch (CpuException e){
             System.out.println(e.getMessage());
         }
+        catch (IndexOutOfBoundsException e)
+        {
+            System.out.println(e.getMessage());
+        }
     }
 }

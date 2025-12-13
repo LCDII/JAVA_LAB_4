@@ -16,10 +16,10 @@ public class CommandController {
     private ProgViewModel progViewModel = ProgViewModel.getInstance();
 
 
-    public void setCommand(Command command)
+    public void setCommand(Command command, int index)
     {
+        this.index = index;
         StringBuilder args = new StringBuilder();
-        args.append(command.getType().name());
         for (String s : command.getArgs())
             args.append(" ").append(s);
         commandTypeT.setText(command.getType().toString());
@@ -32,10 +32,6 @@ public class CommandController {
         }
     }
 
-    @FXML
-    public void initialize() {
-        index = progViewModel.getCurrenUnstructionIndex();
-    }
 
 
     @FXML
@@ -46,12 +42,12 @@ public class CommandController {
     @FXML
     public void onUp()
     {
-
+        progViewModel.bubleUp(index);
     }
     @FXML
     public void onDown()
     {
-
+        progViewModel.pushDown(index);
     }
 
 }

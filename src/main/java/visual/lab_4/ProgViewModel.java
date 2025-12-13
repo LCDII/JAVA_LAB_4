@@ -22,6 +22,7 @@ public class ProgViewModel {
     private ArrayList<IObserver> observers;
     private ICpu cpu;// we need it only for draw registers
     private Executor executor;//do all with instructions
+    private HibernateCommandDAO commandDAO;
 
     private ProgViewModel()
     {
@@ -29,6 +30,7 @@ public class ProgViewModel {
         programm = new Prog();
         cpu = FCpu.build();
         executor = new Executor(cpu, programm);
+        commandDAO = new HibernateCommandDAO();
     }
 
     public void addObserver(IObserver observer)
@@ -44,11 +46,13 @@ public class ProgViewModel {
 
     public void addCommand(Command command)
     {
+        commandDAO.add(command);
         programm.add(command);
         notifyObservers();
     }
     public void removeCommand(int index)
     {
+        commandDAO.remove(programm.getElem(index));
         programm.removeAt(index);
         notifyObservers();
     }
@@ -119,15 +123,27 @@ public class ProgViewModel {
         return programm.commandsByFreaquency();
     }
 
+    public void bubleUp(int index)
+    {
+        programm.bubleUp(index);
+        notifyObservers();
+    }
+
+    public void pushDown(int index)
+    {
+        programm.pushDown(index);
+        notifyObservers();
+    }
+
 
     public List<Command> getProgramList()
     {
-        List<Command> result = new ArrayList<>();
-        for(Command c : programm)
+        programm.clear();
+        for(Command c : commandDAO.getCommands())
         {
-            result.add(c);
+            programm.add(c);
         }
-        return result;
+        return commandDAO.getCommands();
     }
 }
 

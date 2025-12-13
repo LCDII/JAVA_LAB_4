@@ -4,9 +4,14 @@ module visual.lab_4 {
 
     requires org.controlsfx.controls;
     requires com.dlsc.formsfx;
-    requires javafx.graphics;
-    requires java.compiler;
 
-    opens visual.lab_4 to javafx.fxml;
+    requires java.sql;
+    requires org.hibernate.orm.core;
+    requires java.naming;
+    requires org.slf4j;
+    requires jakarta.persistence;
+
+    opens visual.lab_4 to javafx.fxml, org.hibernate.orm.core;
+    opens visual.lab_4.CpuLib to org.hibernate.orm.core;
     exports visual.lab_4;
 }

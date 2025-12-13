@@ -57,7 +57,12 @@ public class Prog implements Iterable<Command>{
     public Prog()
     {
         a = new ArrayList<>();
-        CurrentInstructionIndex = -1;
+        CurrentInstructionIndex = 0;
+    }
+    public Prog(ArrayList<Command> list)
+    {
+        a = list;
+        CurrentInstructionIndex = 0;
     }
     public int getCurrentInstructionIndex()
     {
@@ -75,12 +80,10 @@ public class Prog implements Iterable<Command>{
     }
     public void add(Command command)
     {
-        CurrentInstructionIndex++;
         a.add(command);
     }
     public void removeAt(int index) {
         if (index < 0 || index >= a.size()) throw new RuntimeException();
-        CurrentInstructionIndex--;
         a.remove(index);
     }
 
@@ -101,6 +104,20 @@ public class Prog implements Iterable<Command>{
     public int size()
     {
         return a.size();
+    }
+
+    public void bubleUp(int index)
+    {
+        if(index == 0 || a.size() < 2)
+            return ;
+        Collections.swap(a, index, index-1);
+    }
+
+    public void pushDown(int index)
+    {
+        if(index == a.size()-1 || a.size() < 2)
+            return;
+        Collections.swap(a, index, index+1);
     }
 
     @Override

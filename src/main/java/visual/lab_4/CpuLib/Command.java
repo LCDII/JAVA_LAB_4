@@ -1,11 +1,25 @@
 package visual.lab_4.CpuLib;
 
+import jakarta.persistence.*;
+
 import java.util.Arrays;
 
-public class Command {
 
+@Entity
+@Table(name = "Program")
+public class Command {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    int id;
+    @Column(name = "CommandType", nullable = false)
     private String[] args;
+    @Column(name = "Arguments", nullable = false)
     private CommandType type;
+
+    public Command()
+    {
+        //надо
+    }
 
     public Command(CommandType type, String... args) {
         this.type = type;
@@ -18,6 +32,11 @@ public class Command {
 
     public String[] getArgs() {
         return args;
+    }
+
+    public int getId()
+    {
+        return id;
     }
 
     public String toString() {
