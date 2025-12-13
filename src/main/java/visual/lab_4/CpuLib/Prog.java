@@ -6,7 +6,8 @@ import java.util.stream.Stream;
 
 public class Prog implements Iterable<Command>{
 
-    ArrayList<Command> a;
+    private ArrayList<Command> a;
+    private int CurrentInstructionIndex;
 
 
     public CommandType mostFreaquentCommand()
@@ -56,18 +57,55 @@ public class Prog implements Iterable<Command>{
     public Prog()
     {
         a = new ArrayList<>();
+        CurrentInstructionIndex = -1;
+    }
+    public int getCurrentInstructionIndex()
+    {
+        return CurrentInstructionIndex;
+    }
+    public void setCurrentInstructionIndex(int i)
+    {
+        if(i >= a.size())
+            throw new RuntimeException();
+        CurrentInstructionIndex = i;
+    }
+    public void incrementCurrentInstruction()
+    {
+        CurrentInstructionIndex++;
     }
     public void add(Command command)
     {
-
+        CurrentInstructionIndex++;
         a.add(command);
     }
+    public void removeAt(int index) {
+        if (index < 0 || index >= a.size()) throw new RuntimeException();
+        CurrentInstructionIndex--;
+        a.remove(index);
+    }
+
+    public boolean isEmpty()
+    {
+        return a.isEmpty();
+    }
+
     public Command getElem(int ind)
     {
         return a.get(ind);
     }
+
+    public void clear()
+    {
+        a.clear();
+    }
+    public int size()
+    {
+        return a.size();
+    }
+
     @Override
     public Iterator<Command> iterator() {
         return a.iterator();
     }
+
 }

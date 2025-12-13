@@ -16,6 +16,10 @@ public class MainFrameController {
     private AnchorPane memoryPlaceHolder;
     @FXML
     private AnchorPane statisticsPlaceHolder;
+    @FXML
+    private AnchorPane programPlaceHolder;
+    @FXML
+    private AnchorPane commandAdderPlaceHolder;
 
     @FXML
     public void initialize() {
@@ -29,6 +33,11 @@ public class MainFrameController {
 
             AnchorPane statistics = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("statistics-frame.fxml")));
             statisticsPlaceHolder.getChildren().add(statistics);
+
+            AnchorPane commandAdder = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("command-adder-frame.fxml")));
+            commandAdderPlaceHolder.getChildren().add(commandAdder);
+            ScrollPane commandStorage = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("command-storage-frame.fxml")));
+            programPlaceHolder.getChildren().add(commandStorage);
         }
         catch(IOException e)
         {

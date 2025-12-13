@@ -6,7 +6,7 @@ import visual.lab_4.CpuLib.CpuException;
 
 public class RegistersController implements IObserver
 {
-    ProgViewModel progViewModel = ProgViewModel.getInstance();
+    private ProgViewModel progViewModel = ProgViewModel.getInstance();
     @FXML private Label registerA;
     @FXML private Label registerB;
     @FXML private Label registerC;

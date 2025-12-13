@@ -11,6 +11,14 @@ public class FCpu {
 
         return cpu;
     }
+    public static ICpu reBuild()
+    {
+        cpu = null;
+        cpu = new Cpu();
+        cpu.getHandler().add(new ALUHandler()).add(new CMDHandler()).add(new MemHandler());
+
+        return cpu;
+    }
 
     public static void resetCpu()
     {

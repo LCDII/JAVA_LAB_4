@@ -42,8 +42,46 @@ public class ProgViewModel {
         }
     }
 
-
-
+    public void addCommand(Command command)
+    {
+        programm.add(command);
+        notifyObservers();
+    }
+    public void removeCommand(int index)
+    {
+        programm.removeAt(index);
+        notifyObservers();
+    }
+    public void resetAll()
+    {
+        cpu = FCpu.reBuild();
+        if(programm.isEmpty())
+            programm.setCurrentInstructionIndex(-1);
+        else
+            programm.setCurrentInstructionIndex(0);
+        notifyObservers();
+    }
+    public void executeAll()
+    {
+        try {
+            executor.run();
+        }catch (CpuException e)
+        {
+            System.out.println(e.getMessage());
+        }
+        notifyObservers();
+    }
+    public void executeOne()
+    {
+        try
+        {
+            executor.executeOne();
+        }catch (CpuException e)
+        {
+            System.out.println(e.getMessage());
+        }
+        notifyObservers();
+    }
 
     public String getRegister(String register)
     {
@@ -68,9 +106,28 @@ public class ProgViewModel {
         return programm.mostFreaquentCommand();
     }
 
+    public int getCurrenUnstructionIndex()
+    {
+        return programm.getCurrentInstructionIndex();
+    }
+    public void setCurrenUnstructionIndex(int i)
+    {
+        programm.setCurrentInstructionIndex(i);
+    }
     public List<CommandType> getCommandsByFreaquency()
     {
         return programm.commandsByFreaquency();
+    }
+
+
+    public List<Command> getProgramList()
+    {
+        List<Command> result = new ArrayList<>();
+        for(Command c : programm)
+        {
+            result.add(c);
+        }
+        return result;
     }
 }
 

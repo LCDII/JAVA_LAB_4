@@ -16,13 +16,26 @@ public class Executor {
         this.programm = programm;
     }
 
-    public void run(Prog prog) {
-        for (Command command : prog) {
+    public void run() throws CpuException{
+        for (Command command : programm) {
             try {
                 cpu.execute(command);
+                programm.incrementCurrentInstruction();
             } catch (CpuException e) {
                 System.out.println(e.getMessage());
+
             }
+        }
+    }
+
+    public void executeOne() throws CpuException
+    {
+        try{
+            cpu.execute(programm.getElem(programm.getCurrentInstructionIndex()));
+            programm.incrementCurrentInstruction();
+        }
+        catch (CpuException e){
+            System.out.println(e.getMessage());
         }
     }
 }
