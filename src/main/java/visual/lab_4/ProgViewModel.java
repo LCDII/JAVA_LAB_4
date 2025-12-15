@@ -63,6 +63,7 @@ public class ProgViewModel {
             programm.setCurrentInstructionIndex(-1);
         else
             programm.setCurrentInstructionIndex(0);
+        executor.setCpu(cpu);
         notifyObservers();
     }
     public void executeAll()

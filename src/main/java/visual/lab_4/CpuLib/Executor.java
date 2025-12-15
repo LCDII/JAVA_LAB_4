@@ -42,4 +42,9 @@ public class Executor {
             System.out.println(e.getMessage());
         }
     }
+
+    public void setCpu(ICpu cpu)
+    {
+        this.cpu = cpu;
+    }
 }
