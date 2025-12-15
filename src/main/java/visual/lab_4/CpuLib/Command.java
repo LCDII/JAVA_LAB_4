@@ -43,4 +43,12 @@ public class Command {
         String s = Arrays.toString(args);
         return "Command{args=" + s + ", type=" + String.valueOf(type) + "}";
     }
+
+    public void setType(CommandType type) {
+        this.type = type;
+    }
+
+    public void setArgs(String[] args) {
+        this.args = args;
+    }
 }

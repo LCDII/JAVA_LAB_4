@@ -125,13 +125,15 @@ public class ProgViewModel {
 
     public void bubleUp(int index)
     {
-        programm.bubleUp(index);
+        //programm.bubleUp(index);
+        commandDAO.swap(programm.getElem(index), programm.getElem(index-1));
         notifyObservers();
     }
 
     public void pushDown(int index)
     {
-        programm.pushDown(index);
+        //programm.pushDown(index);
+        commandDAO.swap(programm.getElem(index), programm.getElem(index+1));
         notifyObservers();
     }
 

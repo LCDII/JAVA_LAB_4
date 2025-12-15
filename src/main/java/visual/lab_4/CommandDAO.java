@@ -19,4 +19,11 @@ public class CommandDAO {
     {
         allCommands.remove(cmd);
     }
+
+    public void swap(Command cmd1, Command cmd2)
+    {
+
+    }
 }
+
+
